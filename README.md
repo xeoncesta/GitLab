@@ -2,8 +2,8 @@
 Automatically create releases in GitLab and update the ChangeLog.md as well.
 
 UseCase-
-1.While working on any merge request use the specified template & Label [~ Development Team]
-2.Use merged MR to create a commit for Changelog update and release objects [~ this script]
+1. While working on any merge request use the specified template & Label [~ Development Team]
+2. Use merged MR to create a commit for Changelog update and release objects [~ this script]
 
 Usage:
     `merge_parser.py --authkey=<authkey> --project-path=<project> --component_project-path=<project> [--url=<url>]\
