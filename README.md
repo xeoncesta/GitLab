@@ -1,4 +1,4 @@
-# GitLab_ReleaseAutomation
+# GitLab_Automation
 Automatically create releases in GitLab and update the ChangeLog.md as well.
 
 UseCase-
