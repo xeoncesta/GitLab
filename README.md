@@ -1,5 +1,5 @@
 # GitLab_ReleaseAutomation
-Automatically create releases in GitLab
+Automatically create releases in GitLab and update the ChangeLog.md as well.
 
 UseCase-
 1.While working on any merge request use the specified template & Label [~ Development Team]
@@ -24,3 +24,5 @@ Options:
 -    --scheduled_after=<scheduled_after>           Time in Date-ISO 8601 format for collecting all the MR's updated after.
 -    --scheduled_before=<scheduled_before>         Time in Date-ISO 8601 format for collecting all the MR's updated before.
 -    --help -h                                     Show this screen
+    
+    Can be adapted as per your project needs and structure. See links_templates.py for modifying the final assets/links.
