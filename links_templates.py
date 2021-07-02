@@ -3,10 +3,10 @@ This file contain all the links and constants/templates.
 Used By:merge_parser.py
 """
 
-JFROG_ARTIFACT_LINKS = ""
-ETCS_RELEASE_LINKS = "/-/releases/"
-ETCS_TAGS_LINKS = "/-/tags/"
-ATPCU_VERSION_LINKS = "/-/tree/  --IGNORE(Can be removed)"
+ARTIFACT_LINKS = ""
+RELEASE_LINKS = "/-/releases/"
+TAGS_LINKS = "/-/tags/"
+DEPENDENCIES_VERSION_LINKS = "/-/tree/  --IGNORE(Can be removed)"
 COPYRIGHT = "# Changelog \n\n \
 > We reserve all rights in this file and in the information contained therein. \n\
 > Reproduction, use or disclosure to third parties without express authority is strictly forbidden. \n\
