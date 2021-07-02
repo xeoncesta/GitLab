@@ -35,8 +35,8 @@ from urllib3 import disable_warnings
 from docopt import docopt
 from datetime import datetime, timedelta
 from dateutil.parser import parse
-from links_templates import HEADER, JFROG_ARTIFACT_LINKS, ETCS_RELEASE_LINKS, ETCS_TAGS_LINKS\
-    , COPYRIGHT ,ATPCU_VERSION_LINKS
+from links_templates import HEADER, ARTIFACT_LINKS, RELEASE_LINKS, TAGS_LINKS\
+    , COPYRIGHT ,DEPENDENCIES_VERSION_LINKS
 
 disable_warnings()  # this is needed to avoid warnings
 
@@ -219,8 +219,8 @@ class GitlabRelease:
             num_ncr) + ADDED + DEPRECATED + REMOVED + CHANGED + REFACTORED
         release_info = str(tag_rel) + "  [" + str(
             date.today()) + "]"
-        artifacts_link = JFROG_ARTIFACT_LINKS + tag_rel
-        atpcu_links = ATPCU_VERSION_LINKS + tag_rel + "/versions_config.json"
+        artifacts_link = ARTIFACT_LINKS + tag_rel
+        atpcu_links = DEPENDENCIES_VERSION_LINKS + tag_rel + "/versions_config.json"
         # Update header with compatible atpcu version info
         print("--------- Parsing versions_config.json for updating applicable SS")
         self.update_atpcu_version()
@@ -268,8 +268,8 @@ class GitlabRelease:
             1)
         file_content_str = file_content_str[1]
         # insert applicable links [](url) -- Created before exists
-        links = "[Project Release]("+ ETCS_RELEASE_LINKS + tag_rel + ")"
-        links = links + "\n\n[Project Tag](" + ETCS_TAGS_LINKS + tag_rel + ")"
+        links = "[Project Release]("+ RELEASE_LINKS + tag_rel + ")"
+        links = links + "\n\n[Project Tag](" + TAGS_LINKS + tag_rel + ")"
 
         # prepare new data for commit
         file_update = COPYRIGHT + merge_req.title + " [" + str(
@@ -290,6 +290,7 @@ class GitlabRelease:
         self.project.commits.create(commit_data)
         print("--------- Updated ChangeLog.md for %s" %(merge_req.title))
 
+ # Specific to a project, remove or adapt as per yours 
     def update_atpcu_version(self):
         """
         Update the release obj with the compatible ATPCU version info
